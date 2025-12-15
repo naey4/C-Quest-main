@@ -1,15 +1,15 @@
 ╔══════════════════════════════════════════════════════════════════════════╗
-║                     WORDLE C - KP 2025 PROJECT                          ║
-║                        ✅ READY TO USE                                  ║
+║                    C-QUEST - KP 2025 PROJECT                             ║
+║                                                                          ║
 ╚══════════════════════════════════════════════════════════════════════════╝
 
-📁 FOLDER: wordle_kp2025/
+  FOLDER: c-quest-main/
 
-🎯 QUICK START:
+  QUICK START:
    1. make
-   2. ./wordle
+   2. .\cquest.exe
 
-📚 DOCUMENTATION (pilih salah satu):
+  DOCUMENTATION (pilih salah satu):
    ├─ QUICKSTART.md           ← Mulai dari sini untuk quick reference
    ├─ README.md               ← Dokumentasi lengkap & detailed
    ├─ SETUP.md                ← Panduan compile & troubleshoot
@@ -17,24 +17,24 @@
    ├─ SUBMISSION_CHECKLIST.md ← Status & checklist submission
    └─ IMPLEMENTATION_SUMMARY.md ← Technical implementation details
 
-💻 MAIN FILES:
+  MAIN FILES:
    ├─ score.h, score.c        (Score management & JSON persistence)
    ├─ game.c                  (Game logic & evaluation)
    ├─ main.c                  (Menu system)
    ├─ Makefile                (Build configuration)
-   └─ wordle                  (Compiled executable - ready to run)
+   └─ cquest                  (Compiled executable - ready to run)
 
-✨ FEATURES:
-   ✅ Menu login system (tanpa password)
-   ✅ 3 difficulty levels: Easy (15), Medium (10), Hard (5)
-   ✅ Statistik lengkap per pemain per mode
-   ✅ Leaderboard dengan top 5 players
-   ✅ Player history all-time record
-   ✅ JSON persistence (scores.json)
-   ✅ Modular code (main.c, game.c, score.c)
-   ✅ Makefile build system
+  FEATURES:
+     Menu login system (tanpa password)
+     3 difficulty levels: Easy (15), Medium (10), Hard (5)
+     Statistik lengkap per pemain per mode
+     Leaderboard dengan top 5 players
+     Player history all-time record
+     JSON persistence (scores.json)
+     Modular code (main.c, game.c, score.c)
+     Makefile build system
 
-📊 PROJECT INFO:
+  PROJECT INFO:
    Language: C (C99 standard)
    Compiler: GCC with -O2 -Wall -std=c99
    Executable Size: 22 KB
@@ -42,28 +42,28 @@
    Modules: 3 (main, game, score)
    Created: December 9, 2025
 
-🚀 FIRST TIME SETUP:
-   $ cd wordle_kp2025
-   $ make clean && make
-   $ ./wordle
+  FIRST TIME SETUP:
+      cd cquest
+     make clean && make
+     .\cquest.exe
    
    [Menu akan muncul - pilih opsi 1 untuk login]
    [Pilih opsi 4 untuk mainkan game]
 
 
-❓ NEED HELP?
+  NEED HELP?
    1. Baca QUICKSTART.md untuk quick reference
    2. Baca README.md untuk detailed explanation
    3. Baca SETUP.md untuk compile troubleshooting
-   4. Run: ./wordle dan test semua menu options
+   4. Run: .\cquest.exe dan test semua menu options
 
-✅ VERIFICATION:
-   ✓ All source files present
-   ✓ Makefile functional
-   ✓ Executable compiled
-   ✓ Documentation complete
-   ✓ Features implemented
-   ✓ Ready for grading
+  VERIFICATION:
+    - All source files present
+    - Makefile functional
+    - Executable compiled
+    - Documentation complete
+    - Features implemented
+    - Ready for grading
 
 ═══════════════════════════════════════════════════════════════════════════
 

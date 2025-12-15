@@ -35,7 +35,7 @@ int main(void) {
     int running = 1;
 
     while (running) {
-        printf("\n=== WORDLE C (Menu) ===\n");
+        printf("\n=== C-QUEST  ===\n");
         printf("1) Login / Set nama pemain (current: %s)\n", logged_in ? player_name : "(belum login)");
         printf("2) Tampilkan Top Scores (pilih mode)\n");
         printf("3) Tampilkan Riwayat Pemain (all-time per mode)\n");

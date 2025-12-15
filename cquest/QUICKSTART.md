@@ -1,22 +1,22 @@
-# QUICK START GUIDE - WORDLE C KP 2025
+# QUICK START GUIDE - C-QUEST KP 2025
 
 ## Langkah Cepat
 
-### 1️⃣ Compile
+###   Compile
 ```bash
-cd /workspaces/210705390
+cd cquest
 make
 ```
-Output: Program `wordle` berhasil dikompilasi
-
-### 2️⃣ Run
-```bash
-./wordle
+Output: Program `cquest` berhasil dikompilasi
+SS
+###  Run
+```powershell
+.\cquest.exe
 ```
 
-### 3️⃣ Main Menu Muncul
+###   Main Menu Muncul
 ```
-=== WORDLE C (Menu) ===
+ === C-QUEST  ===
 1) Login / Set nama pemain (current: (belum login))
 2) Tampilkan Top Scores (pilih mode)
 3) Tampilkan Riwayat Pemain (all-time per mode)
@@ -29,7 +29,7 @@ Pilih (1-5):
 
 ### Pemain Baru: Ingin Bermain
 ```
-1. Ketik 1 (Login) → Masukkan nama "Alice"
+1. Ketik 1 (Login) → Masukkan nama "nesya"
 2. Ketik 4 (Mainkan Game) → Pilih 1 (Easy)
 3. Terima petunjuk anagram
 4. Tebak 5 huruf, hingga benar atau kehabisan percobaan
@@ -46,8 +46,8 @@ Pilih (1-5):
 
 ### Lihat Riwayat Pemain
 ```
-1. Ketik 3 (Riwayat Pemain) → Masukkan nama "Alice"
-2. Lihat statistik all-time Alice untuk ketiga mode
+1. Ketik 3 (Riwayat Pemain) → Masukkan nama "nesya"
+2. Lihat statistik all-time nesya untuk ketiga mode
 3. Ketik nomor lagi untuk menu
 ```
 
@@ -60,7 +60,7 @@ Pilih (1-5):
 ├── game.c               ← Game loop logic
 ├── main.c               ← Menu & entry point
 ├── Makefile             ← Build config
-├── wordle               ← EXECUTABLE (hasil compile)
+├── c_quest              ← EXECUTABLE (hasil compile)
 ├── scores.json          ← Data skor pemain (auto-created after first win)
 ├── README.md            ← Dokumentasi lengkap
 └── IMPLEMENTATION_SUMMARY.md ← Summary implementasi
@@ -105,11 +105,11 @@ Selamat! Tebakan benar dalam 2 percobaan.
 ## Statistik yang Disimpan (Per Pemain Per Mode)
 
 Setelah menang, program otomatis menyimpan:
-- ✅ **games_played**: +1
-- ✅ **wins**: +1
-- ✅ **best_attempts**: Ambil nilai terkecil dari sebelumnya
-- ✅ **total_attempts**: Akumulasi dengan percobaan saat ini
-- ✅ **last_win**: Update dengan tanggal hari ini (YYYY-MM-DD)
+-   **games_played**: +1
+-   **wins**: +1
+-   **best_attempts**: Ambil nilai terkecil dari sebelumnya
+-   **total_attempts**: Akumulasi dengan percobaan saat ini
+-   **last_win**: Update dengan tanggal hari ini (YYYY-MM-DD)
 
 ## Data Persistence (scores.json)
 
@@ -118,21 +118,21 @@ Format yang tersimpan:
 [
   {
     "mode":"E",
-    "name":"Alice",
-    "games_played":5,
-    "wins":3,
-    "best_attempts":2,
-    "total_attempts":14,
-    "last_win":"2025-12-09"
+    "name":"nesya",
+    "games_played":1,
+    "wins":1,
+    "best_attempts":1,
+    "total_attempts":1,
+    "last_win":"2025-12-15"
   },
   {
-    "mode":"E",
-    "name":"Bob",
-    "games_played":3,
-    "wins":2,
-    "best_attempts":4,
-    "total_attempts":12,
-    "last_win":"2025-12-09"
+    "mode":"M",
+    "name":"nesya",
+    "games_played":1,
+    "wins":1,
+    "best_attempts":1,
+    "total_attempts":1,
+    "last_win":"2025-12-15"
   }
 ]
 ```
@@ -155,21 +155,22 @@ File ini:
 
 ## Contoh Sesi Lengkap
 
-```bash
-$ ./wordle
+=== C-QUEST   ===
+```powershell
+  .\cquest.exe
 
-=== WORDLE C (Menu) ===
+ === C-QUEST  ===
 1) Login / Set nama pemain (current: (belum login))
 2) Tampilkan Top Scores (pilih mode)
 3) Tampilkan Riwayat Pemain (all-time per mode)
 4) Mainkan Game (wajib login)
 5) Keluar
 Pilih (1-5): 1
-Masukkan nama pemain (tanpa koma, max 31 char): Alice
-Logged in sebagai: Alice
+Masukkan nama pemain (tanpa koma, max 31 char): nesya
+Logged in sebagai: nesya
 
-=== WORDLE C (Menu) ===
-1) Login / Set nama pemain (current: Alice)
+ === C-QUEST  ===
+1) Login / Set nama pemain (current: nesya)
 ...
 Pilih (1-5): 4
 Pilih level: 1) Easy (15)  2) Medium (10)  3) Hard (5) : 1
@@ -178,15 +179,15 @@ Mode E - Anda 15 percobaan untuk menebak kata 5 huruf.
 Percobaan 1/15 - masukkan tebakan: zooms
 [Z] [O] [O] [M] [S]
 Selamat! Tebakan benar dalam 1 percobaan.
-Score tersimpan untuk Alice pada mode E : 1 percobaan.
+Score tersimpan untuk nesya pada mode E : 1 percobaan.
 
-=== WORDLE C (Menu) ===
+ === C-QUEST  ===
 Pilih (1-5): 2
 Pilih mode: (E)asy, (M)edium, (H)ard: E
 == Top skor (mode E) ==
-1. Alice - best: 1 attempts, wins: 1, games: 1, avg attempts: 1.00, last_win: 2025-12-09
+1. nesya - best: 1 attempts, wins: 1, games: 1, avg attempts: 1.00, last_win: 2025-12-09
 
-=== WORDLE C (Menu) ===
+ === C-QUEST  ===
 Pilih (1-5): 5
 Terima kasih, sampai jumpa!
 ```
@@ -231,4 +232,4 @@ Kemudian re-compile: `make clean && make`
 
 ---
 
-**Selamat bermain WORDLE C! 🎮**
+**Selamat bermain C-QUEST ! 🎮**

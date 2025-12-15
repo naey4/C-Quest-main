@@ -1,63 +1,63 @@
-# 📋 FILE SUBMISSION CHECKLIST - WORDLE C KP 2025
+#   FILE SUBMISSION CHECKLIST - C-QUEST KP 2025
 
-## ✅ Source Code Files (Core)
+##   Source Code Files (Core)
 
-- ✅ **score.h** (991 bytes)
-  - Header file untuk score management
-  - Define struct ScoreEntry, ScoreList
-  - Function prototypes
+-   **score.h** (991 byte)
+  - File header untuk manajemen skor
+  - Definisi struct ScoreEntry dan ScoreList
+  - Prototipe fungsi
 
-- ✅ **score.c** (8.0 KB)
-  - JSON load/save implementation
-  - Leaderboard display logic
-  - Player history display
-  - Custom JSON parser
+-   **score.c** (8.0 KB)
+  - Implementasi load/save JSON
+  - Logika tampilan leaderboard
+  - Tampilan riwayat pemain
+  - Parser JSON kustom
 
-- ✅ **game.c** (4.1 KB)
-  - Main game loop
-  - Word randomization & hint generation
-  - Guess evaluation with feedback
-  - Score recording
+-   **game.c** (4.1 KB)
+  - Loop utama permainan
+  - Pengacakan kata & pembuatan hint
+  - Evaluasi tebakan dengan umpan balik
+  - Pencatatan skor
 
-- ✅ **main.c** (3.3 KB)
-  - Menu system (5 options)
-  - User input handling
-  - Session management
+-   **main.c** (3.3 KB)
+  - Sistem menu (5 opsi)
+  - Penanganan input pengguna
+  - Manajemen sesi permainan
 
-## ✅ Build Files
+##   File Build
 
-- ✅ **Makefile** (345 bytes)
-  - Compilation targets
-  - GCC flags: -O2 -Wall -std=c99
-  - Clean target
+-   **Makefile** (345 byte)
+  - Target kompilasi
+  - Flag GCC: -O2 -Wall -std=c99
+  - Target clean
 
-- ✅ **wordle** (22 KB - executable)
-  - Compiled binary
-  - Ready to run: `./wordle`
+-   **cquest** (22 KB - executable)
+  - File biner hasil kompilasi
+  - Siap dijalankan: `.\cquest.exe`
 
-## ✅ Documentation Files
+##   File Dokumentasi
 
-- ✅ **README.md** (8.1 KB)
-  - Comprehensive documentation
-  - Feature overview
-  - Usage guide
-  - API description
-  - Troubleshooting
+-   **README.md** (8.1 KB)
+  - Dokumentasi lengkap
+  - Gambaran fitur
+  - Panduan penggunaan
+  - Deskripsi API
+  - Pemecahan masalah
 
-- ✅ **QUICKSTART.md** (6.0 KB)
-  - Quick start guide
-  - Common tasks
-  - File structure
-  - Examples
-  - Tips & tricks
+-   **QUICKSTART.md** (6.0 KB)
+  - Panduan cepat memulai
+  - Tugas umum
+  - Struktur file
+  - Contoh penggunaan
+  - Tips & trik
 
-- ✅ **IMPLEMENTATION_SUMMARY.md** (5.4 KB)
-  - Implementation status
-  - Feature checklist
-  - Technology stack
-  - Exceptions from requirements
+-   **IMPLEMENTATION_SUMMARY.md** (5.4 KB)
+  - Status implementasi
+  - Daftar fitur
+  - Teknologi yang digunakan
+  - Pengecualian dari requirement
 
-## 📊 Project Statistics
+##   Project Statistics
 
 | Metric | Value |
 |--------|-------|
@@ -70,85 +70,85 @@
 | Executable Size | 22 KB |
 | Code Quality | Clean C99 |
 
-## 🎯 Features Implemented (✅ = Done)
+## Features Implemented (  = Done)
 
 ### Menu System
-- ✅ Login / Set nama pemain
-- ✅ Tampilkan Top Scores (per mode)
-- ✅ Tampilkan Riwayat Pemain (all-time)
-- ✅ Mainkan Game (dengan validasi)
-- ✅ Keluar
+-   Login / Set nama pemain
+-   Tampilkan Top Scores (per mode)
+-   Tampilkan Riwayat Pemain (all-time)
+-   Mainkan Game (dengan validasi)
+-   Keluar
 
 ### Game Logic
-- ✅ 3 difficulty levels (Easy, Medium, Hard)
-- ✅ Word randomization & shuffling
-- ✅ Anagram hint generation
-- ✅ Guess evaluation
-- ✅ Feedback system
+-   3 tingkat kesulitan (Easy, Medium, Hard)
+-   Pengacakan dan randomisasi kata
+-   Pembuatan hint berupa anagram
+-   Evaluasi tebakan
+-   Sistem umpan balik
 
 ### Data Management
-- ✅ JSON file format (scores.json)
-- ✅ Auto-load on startup
-- ✅ Auto-save after each game
-- ✅ Persistent storage
+-   Format file JSON (scores.json)
+-   Auto-load saat program dijalankan
+-   Auto-save setelah setiap permainan
+-   Penyimpanan data persisten
 
 ### Statistics
-- ✅ games_played (per mode)
-- ✅ wins (per mode)
-- ✅ best_attempts (per mode)
-- ✅ total_attempts (per mode)
-- ✅ last_win date (per mode)
+-   games_played (per mode)
+-   wins (per mode)
+-   best_attempts (per mode)
+-   total_attempts (per mode)
+-   last_win date (per mode)
 
 ### UI/Display
-- ✅ Top 5 leaderboard (sorted)
-- ✅ Player history display
-- ✅ Game feedback (colored simulation)
-- ✅ Input validation
-- ✅ Error handling
+-   Leaderboard Top 5 (tersortir)
+-   Tampilan riwayat pemain
+-   Umpan balik permainan (simulasi berwarna)
+-   Validasi input
+-   Penanganan error
 
-## 🔍 Code Quality Checklist
+##   Code Quality Checklist
 
-- ✅ Header guards (#ifndef / #define / #endif)
-- ✅ Function declarations in headers
-- ✅ Proper struct definitions
-- ✅ Pointer usage optimization
-- ✅ Array bounds checking
-- ✅ Memory allocation error handling
-- ✅ File I/O error handling
-- ✅ Input validation
-- ✅ Clear naming conventions
-- ✅ Modular function design
-- ✅ Comments for complex logic
-- ✅ No compiler errors
-- ✅ Minimal compiler warnings
+-   Header guard (#ifndef / #define / #endif)
+-   Deklarasi fungsi di header
+-   Definisi struct yang rapi
+-   Optimasi penggunaan pointer
+-   Pengecekan batas array
+-   Penanganan error alokasi memori
+-   Penanganan error file I/O
+-   Validasi input
+-   Penamaan variabel yang jelas
+-   Desain fungsi modular
+-   Komentar pada logika kompleks
+-   Tidak ada error kompilasi
+-   Peringatan compiler minimal
 
-## 📋 Pengecualian yang Diminta (HONORED)
+##   Pengecualian yang Diminta (HONORED)
 
-### ❌ NOT IMPLEMENTED (sesuai request)
-1. Auto-login / Session persistence
-2. Word validation (force dictionary check)
+###   NOT IMPLEMENTED (sesuai request)
+1. Auto-login / penyimpanan sesi
+2. Validasi kata (paksa cek kamus)
 
-### ✅ IMPLEMENTED (semua yang lain)
-1. Extended statistics (games_played, wins, etc)
-2. Player history (all-time per mode)
-3. Modular code (main.c, game.c, score.c)
-4. Makefile build system
-5. JSON data format
+###   IMPLEMENTED (semua yang lain)
+1. Statistik lanjutan (games_played, wins, dll)
+2. Riwayat pemain (all-time per mode)
+3. Kode modular (main.c, game.c, score.c)
+4. Sistem build Makefile
+5. Format data JSON
 
-## 🚀 Compilation & Testing
+##   Compilation & Testing
 
 ### Successful Compilation
-```bash
-$ make
+```powershell
+  make
 gcc -O2 -Wall -std=c99 -c main.c
 gcc -O2 -Wall -std=c99 -c game.c
 gcc -O2 -Wall -std=c99 -c score.c
-gcc -O2 -Wall -std=c99 -o wordle main.o game.o score.o
+gcc -O2 -Wall -std=c99 -o cquest main.o game.o score.o
 ```
 
 ### Program Execution
-```bash
-$ ./wordle
+```powershell
+  .\cquest.exe
 [Menu system loads successfully]
 [All 5 menu options functional]
 [Game runs and saves scores]
@@ -156,45 +156,44 @@ $ ./wordle
 
 ### Data Persistence
 ```bash
-$ cat scores.json
+  scores.json
 [Valid JSON array with player records]
 ```
 
-## 📦 Deliverables Summary
+##   Deliverables Summary
 
 | Item | Status | Notes |
 |------|--------|-------|
-| Source Code (.c/.h) | ✅ Complete | 489 LoC |
-| Makefile | ✅ Complete | -O2 -Wall -std=c99 |
-| Executable | ✅ Complete | 22 KB binary |
-| Documentation | ✅ Complete | 3 markdown files |
-| Feature Set | ✅ Complete | All non-excepted features |
-| Code Quality | ✅ High | Proper C practices |
-| Error Handling | ✅ Implemented | File I/O & malloc checks |
-| User Interface | ✅ Functional | Menu-driven with validation |
+| Source Code (.c/.h) |   Complete | 489 LoC |
+| Makefile |   Complete | -O2 -Wall -std=c99 |
+| Executable |   Complete | 22 KB binary |
+| Documentation |   Complete | 3 markdown files |
+| Feature Set |   Complete | All non-excepted features |
+| Code Quality |   High | Proper C practices |
+| Error Handling |   Implemented | File I/O & malloc checks |
+| User Interface |   Functional | Menu-driven with validation |
 
-## 🎓 Educational Value
+##   Educational Value
 
 ### C Programming Concepts Demonstrated
-- ✅ Typedef struct for data organization
-- ✅ Pointer usage in function parameters
-- ✅ Dynamic array management
-- ✅ File I/O operations (fopen, fread, fwrite)
-- ✅ String manipulation (strcpy, strlen, etc)
-- ✅ Memory management (malloc implicit via auto arrays)
-- ✅ Function modularization
-- ✅ Compilation workflow with Makefile
+-   Typedef struct untuk organisasi data
+-   Penggunaan pointer pada parameter fungsi
+-   Manajemen array
+-   Operasi file I/O (fopen, fread, fwrite)
+-   Manipulasi string
+-   Modularisasi fungsi
+-   Alur kompilasi dengan Makefile
 
 ### Software Engineering Practices
-- ✅ Separation of concerns (UI/Logic/Data layers)
-- ✅ Header file design
-- ✅ Modular architecture
-- ✅ Error handling
-- ✅ Build automation
-- ✅ Documentation
-- ✅ Code organization
+-   Separation of concerns (UI/Logic/Data layers)
+-   Header file design
+-   Modular architecture
+-   Error handling
+-   Build automation
+-   Documentation
+-   Code organization
 
-## 📝 How to Use This Submission
+##   How to Use This Submission
 
 1. **Copy all .c, .h, and Makefile files to target directory**
    ```bash
@@ -203,43 +202,28 @@ $ cat scores.json
 
 2. **Compile**
    ```bash
-   cd /target/directory
+   cd cquest
    make
    ```
 
 3. **Run**
-   ```bash
-   ./wordle
-   ```
+  ```powershell
+  .\cquest.exe
+  ```
 
 4. **Reference Documentation**
-   - README.md → Comprehensive guide
-   - QUICKSTART.md → Quick reference
-   - IMPLEMENTATION_SUMMARY.md → Technical details
+   - README.md → Panduan lengkap
+   - QUICKSTART.md → Panduan singkat
+   - IMPLEMENTATION_SUMMARY.md → Detail teknis
 
-## ✨ Extra Features (Bonus)
+##   Extra Features (Bonus)
 
-- Anagram hint generation using Fisher-Yates shuffle
-- Date tracking with YYYY-MM-DD format
-- Average attempts calculation
-- Leaderboard sorting by best_attempts and wins
-- Input validation for names and guesses
-- Custom JSON parser without external dependencies
-- Colored feedback simulation in output
+-   Pembuatan hint anagram (Fisher-Yates shuffle)
+-   Pencatatan tanggal format YYYY-MM-DD
+-   Perhitungan rata-rata percobaan
+-   Penyortiran leaderboard
+-   Validasi input nama dan tebakan
+-   Parser JSON kustom tanpa library eksternal
+-   Simulasi warna pada output
 
-## 🎯 Final Status
-
-```
-╔════════════════════════════════════════╗
-║  PROJECT STATUS: COMPLETE & READY      ║
-║  ALL REQUIREMENTS MET                  ║
-║  READY FOR SUBMISSION                  ║
-╚════════════════════════════════════════╝
-```
-
----
-
-**Last Updated**: December 9, 2025  
-**Submission Date**: Ready Anytime  
-**Version**: 1.0  
-**Status**: ✅ COMPLETE
+##   Final Status

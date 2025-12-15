@@ -1,8 +1,8 @@
-# cquest C - Dokumentasi & README
+# C-QUEST - Dokumentasi & README
 
 ## Ringkasan Program
 
-Program ini adalah klon game cquest sederhana yang ditulis dalam bahasa C, dengan fitur-fitur tambahan seperti:
+Program ini adalah game puzzle kata C-Quest yang ditulis dalam bahasa C, dengan fitur-fitur tambahan seperti:
 - **Menu Login**: Sistem login tanpa password (seperti arcade scoreboard)
 - **Multiple Levels**: Easy (15 percobaan), Medium (10 percobaan), Hard (5 percobaan)
 - **Statistik Pemain**: Menyimpan statistik lengkap untuk setiap pemain per mode
@@ -38,12 +38,21 @@ File `scores.json` menyimpan data dalam format JSON array:
 [
   {
     "mode":"E",
-    "name":"Alice",
-    "games_played":10,
-    "wins":3,
-    "best_attempts":3,
-    "total_attempts":28,
-    "last_win":"2025-12-09"
+    "name":"nesya",
+    "games_played":1,
+    "wins":1,
+    "best_attempts":1,
+    "total_attempts":1,
+    "last_win":"2025-12-15"
+  },
+  {
+    "mode":"M",
+    "name":"nesya",
+    "games_played":1,
+    "wins":1,
+    "best_attempts":1,
+    "total_attempts":1,
+    "last_win":"2025-12-15"
   }
 ]
 ```
@@ -65,7 +74,7 @@ File `scores.json` menyimpan data dalam format JSON array:
 
 ### 1. Compile Program
 ```bash
-cd /workspaces/210705390
+cd cquest
 make
 ```
 
@@ -74,17 +83,17 @@ Output:
 gcc -O2 -Wall -std=c99 -c main.c
 gcc -O2 -Wall -std=c99 -c game.c
 gcc -O2 -Wall -std=c99 -c score.c
-gcc -O2 -Wall -std=c99 -o cquestmain.o game.o score.o
+gcc -O2 -Wall -std=c99 -o cquest main.o game.o score.o
 ```
 
 ### 2. Jalankan Program
-```bash
-./wordle
+```powershell
+.\cquest.exe
 ```
 
 ### 3. Menu Utama
 ```
-=== cquestC (Menu) ===
+=== C-QUEST (Menu) ===
 1) Login / Set nama pemain (current: (belum login))
 2) Tampilkan Top Scores (pilih mode)
 3) Tampilkan Riwayat Pemain (all-time per mode)
@@ -94,7 +103,12 @@ Pilih (1-5):
 ```
 
 ### 4. Opsi Menu
+# Jalankan program
+.\cquest.exe
 
+# Hapus executable dan data skor
+make clean
+```
 **Opsi 1: Login / Set Nama**
 - Masukkan nama pemain (tanpa koma, max 31 karakter)
 - Nama digunakan untuk tracking skor dan leaderboard
@@ -133,8 +147,8 @@ Percobaan 3: zooms → SELAMAT! Score tercatat
 ```
 Menu → Opsi 2 → Mode: E
 == Top skor (mode E) ==
-1. Bob - best: 2 attempts, wins: 5, games: 7, avg attempts: 3.14, last_win: 2025-12-09
-2. Alice - best: 3 attempts, wins: 3, games: 10, avg attempts: 2.80, last_win: 2025-12-09
+1. nesya - best: 2 attempts, wins: 5, games: 7, avg attempts: 3.14, last_win: 2025-12-09
+2. abel - best: 3 attempts, wins: 3, games: 10, avg attempts: 2.80, last_win: 2025-12-09
 ...
 ```
 
@@ -178,17 +192,17 @@ typedef struct {
 ## Pengecualian Implementasi (Sesuai Request)
 
 Fitur yang **TIDAK** diimplementasikan (per pengecualian user):
-1. ❌ Auto-login / Mode persisten session
-2. ❌ Validasi tebakan (tebakan tidak harus ada di kata_bawaan)
+1.   Auto-login / Mode persisten session
+2.   Validasi tebakan (tebakan tidak harus ada di kata_bawaan)
 
 Fitur yang **SUDAH** diimplementasikan:
-1. ✅ Menu login / scoreboard
-2. ✅ Penyimpanan statistik lengkap (games_played, wins, best_attempts, dll)
-3. ✅ Leaderboard / Top Scores per mode
-4. ✅ Player History / All-time record
-5. ✅ Format JSON untuk flexibility
-6. ✅ Modular code structure (main.c, game.c, score.c)
-7. ✅ Makefile untuk build management
+1.   Menu login / scoreboard
+2.   Penyimpanan statistik lengkap (games_played, wins, best_attempts, dll)
+3.   Leaderboard / Top Scores per mode
+4.   Player History / All-time record
+5.   Format JSON untuk flexibility
+6.   Modular code structure (main.c, game.c, score.c)
+7.   Makefile untuk build management
 
 ## Catatan Penting
 
@@ -196,8 +210,103 @@ Fitur yang **SUDAH** diimplementasikan:
 File `game.c` saat ini menggunakan daftar kata minimal (15 kata) sebagai contoh:
 ```c
 static const char *kata_bawaan[] = {
+    // A
     "about","above","abuse","actor","acute","admit","adopt","adult","after","again",
-    "zoned","zones","zonks","zooms","zowie"
+    "agent","agree","ahead","alarm","album","alert","alien","allow","alone","along",
+
+    // B
+    "basic","beach","began","begin","being","below","bench","birth","black","blame",
+    "blind","block","blood","board","boost","brain","brand","bread","break","bring",
+
+    // C
+    "cable","carry","catch","cause","chain","chair","chart","check","chest","chief",
+    "child","clean","clear","clock","close","coach","coast","could","count","court",
+
+    // D
+    "dance","dated","dealt","death","delay","depth","doing","doubt","dozen","draft",
+    "drama","dream","dress","drink","drive","drove",
+
+    // E
+    "eager","early","earth","eight","elite","empty","enemy","enjoy","enter","equal",
+    "error","event","every","exact","exist","extra",
+
+    // F
+    "faith","false","fault","field","fifth","fight","final","first","fixed","flash",
+    "floor","focus","force","frame","fresh","front","fruit",
+
+    // G
+    "giant","given","glass","globe","going","grace","grade","grant","green","group",
+    "grown","guard","guess","guest",
+
+    // H
+    "happy","heart","heavy","hence","honor","horse","hotel","house","human","humor",
+
+    // I
+    "ideal","image","index","inner","input","issue",
+
+    // J
+    "joint","judge","juice",
+
+    // K
+    "known","knife","knock",
+
+    // L
+    "label","large","later","laugh","layer","learn","least","leave","light","limit",
+    "local","logic","loose","lower","lucky","lunch",
+
+    // M
+    "magic","major","maker","march","match","maybe","metal","might","minor","model",
+    "money","month","moral","motor","mount","mouse","mouth","movie","music",
+
+    // N
+    "named","never","night","noise","north","novel","nurse",
+
+    // O
+    "occur","ocean","offer","often","order","other","ought","owner",
+
+    // P
+    "panel","party","peace","phase","phone","photo","piece","pilot","pitch","place",
+    "plain","plane","plant","point","power","press","price","pride","prime","print",
+    "prior","proof","proud",
+
+    // Q
+    "queen","quick","quiet","quite",
+
+    // R
+    "radio","raise","range","rapid","reach","react","ready","refer","right","rival",
+    "river","rough","round","route","royal","rural",
+
+    // S
+    "scale","scene","scope","score","sense","serve","seven","shall","shape","share",
+    "sharp","sheet","shift","short","shown","sight","since","skill","sleep","small",
+    "smart","smile","sound","south","space","spare","speak","speed","spend","spent",
+    "split","sport","staff","stage","stand","start","state","steam","steel","stick",
+    "still","stock","stone","store","storm","story","study","stuff","style","sugar",
+
+    // T
+    "table","taken","taste","teach","thank","their","theme","there","these","thick",
+    "thing","think","third","those","three","throw","tight","times","tired","title",
+    "today","topic","total","touch","tower","track","trade","train","treat","trend",
+    "trial","trust","truth","twice",
+
+    // U
+    "under","union","unity","until","upper","urban","usage","usual",
+
+    // V
+    "valid","value","video","virus","visit","vital","voice",
+
+    // W
+    "waste","watch","water","wheel","where","which","while","white","whole","whose",
+    "woman","women","world","worry","worth","would","write","wrong",
+
+    // X
+    "xenon",
+
+    // Y
+    "yield","young","youth",
+
+    // Z
+    "zebra","zonal"
 };
 ```
 
@@ -213,15 +322,11 @@ Program dikompilasi dengan `-Wall -std=c99`. Beberapa warning minor (strcpy trun
 
 ## Command Cepat
 
-```bash
-# Bersihkan dan rebuild
-make clean && make
+```powershell
+cd cquest
+dir
+.\cquest.exe
 
-# Jalankan program
-./wordle
-
-# Hapus executable dan data skor
-make clean
 ```
 
 ## Struktur Menu yang Tersedia
@@ -255,9 +360,3 @@ MAIN MENU
 | Program stuck di menu | Input harus diikuti Enter. Gunakan `Ctrl+C` untuk exit paksa. |
 | Nama pemain tidak tersimpan | Pastikan Anda login di menu 1 sebelum memainkan game |
 
----
-
-**Author**: Implementation berdasarkan spesifikasi KP 2025  
-**Tanggal**: December 2025  
-**Bahasa**: C (C99 Standard)  
-**Build Tool**: Makefile (GCC)

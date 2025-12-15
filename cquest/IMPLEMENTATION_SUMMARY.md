@@ -1,6 +1,6 @@
-# RINGKASAN IMPLEMENTASI WORDLE C - KP 2025
+# RINGKASAN IMPLEMENTASI C-QUEST - KP 2025
 
-## Status Implementasi ✅
+## Status Implementasi  
 
 Semua fitur yang diminta telah berhasil diimplementasikan. Program dapat dikompilasi tanpa error dan siap dijalankan.
 
@@ -48,47 +48,47 @@ Semua fitur yang diminta telah berhasil diimplementasikan. Program dapat dikompi
 - Contoh skenario penggunaan
 - Troubleshooting guide
 
-### 7. **wordle** (executable, 22K)
+### 7. **c_quest** (executable, 22K)
 - Hasil compile dari semua source files
-- Ready to run: `./wordle`
+- Ready to run: `.\cquest.exe`
 
 ## Fitur-Fitur yang Diimplementasikan
 
-### ✅ Menu Lengkap dengan Login
+###   Menu Lengkap dengan Login
 - Sistem login tanpa password (seperti arcade scoreboard)
 - Nama pemain divalidasi dan disimpan untuk session
 - Opsi ganti nama kapan saja
 
-### ✅ Tiga Level Kesulitan
+###   Tiga Level Kesulitan
 - **Easy (E)**: 15 percobaan
 - **Medium (M)**: 10 percobaan  
 - **Hard (H)**: 5 percobaan
 
-### ✅ Statistik Lengkap Per Pemain Per Mode
+###   Statistik Lengkap Per Pemain Per Mode
 - `games_played`: Total game dimainkan
 - `wins`: Total kemenangan
 - `best_attempts`: Score terbaik (semakin kecil semakin baik)
 - `total_attempts`: Akumulasi percobaan (untuk rata-rata)
 - `last_win`: Tanggal kemenangan terakhir (YYYY-MM-DD)
 
-### ✅ Leaderboard / Top Scores
+###   Leaderboard / Top Scores
 - Menampilkan Top 5 pemain per mode
 - Sorted berdasarkan best_attempts
 - Tambahan info: total wins, total games, rata-rata attempts, last_win date
 - Otomatis update setelah setiap game
 
-### ✅ Player History / All-Time Record
+###   Player History / All-Time Record
 - Menampilkan statistik all-time pemain untuk ketiga mode (E, M, H)
 - Per-mode breakdown dengan statistik lengkap
 - Rata-rata attempts per mode
 
-### ✅ Penyimpanan Data dengan Format JSON
+###   Penyimpanan Data dengan Format JSON
 - File `scores.json` menyimpan semua data pemain
 - Format JSON array dengan object per entry
 - Simple JSON parser (tanpa library eksternal)
 - Auto-load saat program start, auto-save setelah setiap game
 
-### ✅ Modular Code Structure
+###   Modular Code Structure
 - 3 file source (.c) + 1 header (.h) + Makefile
 - Separation of concerns:
   - `main.c`: UI dan menu loop
@@ -96,33 +96,33 @@ Semua fitur yang diminta telah berhasil diimplementasikan. Program dapat dikompi
   - `score.c`: Data persistence dan display
 - Easy to extend dan maintain
 
-### ✅ Struct & Pointer Usage
+###   Struct & Pointer Usage
 - ScoreEntry struct untuk menyimpan per-pemain per-mode data
 - ScoreList struct dengan array + count untuk dynamic management
 - Pointer usage di function parameter untuk efficient memory
 - Array pointer di game.c untuk kata_bawaan
 
-### ✅ File I/O Processing
+###   File I/O Processing
 - Load JSON dari scores.json (parsing, allocation)
 - Save JSON ke scores.json (formatting, writing)
 - Error handling untuk file not found, allocation failed
 
-### ✅ Function Modularization
+###   Function Modularization
 - 15+ functions dengan single responsibility
 - Header file untuk public interface
 - Static functions untuk internal implementation
 
 ## Pengecualian yang Diminta (Sesuai Request)
 
-❌ **TIDAK diimplementasikan:**
+  **TIDAK diimplementasikan:**
 1. Auto-login / Mode persisten session - sesuai pengecualian user
 2. Validasi tebakan (force word harus ada di kata_bawaan) - sesuai pengecualian user
 
-✅ **DIIMPLEMENTASIKAN semua yang lain:**
-1. ✅ Simpan lebih banyak statistik
-2. ✅ Tampilkan riwayat pemain (all-time best per mode)
-3. ✅ Pisahkan kode ke beberapa file (main.c, game.c, score.c) + Makefile
-4. ✅ Format file scoreboard ke JSON untuk fleksibilitas
+  **DIIMPLEMENTASIKAN semua yang lain:**
+1.   Simpan lebih banyak statistik
+2.   Tampilkan riwayat pemain (all-time best per mode)
+3.   Pisahkan kode ke beberapa file (main.c, game.c, score.c) + Makefile
+4.   Format file scoreboard ke JSON untuk fleksibilitas
 
 ## Teknologi & Tools
 
@@ -134,36 +134,22 @@ Semua fitur yang diminta telah berhasil diimplementasikan. Program dapat dikompi
 
 ## Compile & Run
 
-```bash
-# Di directory /workspaces/210705390
+```powershell
+cd cquest
+dir
+.\cquest.exe
 
-# Compile
-make
-
-# Run
-./wordle
-
-# Clean (remove objects, executable, score file)
-make clean
 ```
 
 ## Kesimpulan
 
-✅ **Semua requirement telah dipenuhi:**
-- Menu system dengan login ✅
-- Levelisasi game (Easy/Medium/Hard) ✅
-- Penyimpanan skor ke file JSON ✅
-- Statistik lengkap pemain ✅
-- Leaderboard & Player History ✅
-- Modular code structure ✅
-- Proper struct/pointer/array usage ✅
-- File I/O processing ✅
-- Makefile untuk build management ✅
-
-**Program siap untuk dikumpulkan sebagai tugas KP 2025.**
-
----
-
-*Implementasi selesai pada: 9 Desember 2025*
-*Total code: 489 baris (source files)*
-*Executable size: 22K*
+  **Semua requirement telah dipenuhi:**
+- Menu system dengan login  
+- Levelisasi game (Easy/Medium/Hard)  
+- Penyimpanan skor ke file JSON  
+- Statistik lengkap pemain  
+- Leaderboard & Player History  
+- Modular code structure  
+- Proper struct/pointer/array usage  
+- File I/O processing  
+- Makefile untuk build management  

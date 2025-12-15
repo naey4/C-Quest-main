@@ -1,4 +1,4 @@
-# 🚀 SETUP & BUILD GUIDE
+#   SETUP & BUILD GUIDE - C-QUEST
 
 ## Prerequisites
 
@@ -25,30 +25,30 @@ brew install gcc make
 ## Quick Setup
 
 ### Option 1: Using Pre-compiled Binary (Fastest)
-```bash
-cd wordle_kp2025
-./wordle
+```powershell
+ cd cquest
+.\cquest.exe
 ```
 
 ### Option 2: Compile from Source
-```bash
-cd wordle_kp2025
+```powershell
+ cd cquest
 make
-./wordle
+.\cquest.exe
 ```
 
 ## Detailed Build Instructions
 
 ### Step 1: Navigate to Folder
 ```bash
-cd wordle_kp2025
+ cd cquest
 ```
 
 ### Step 2: Clean Old Builds (Optional)
 ```bash
 make clean
 ```
-This removes: `*.o` (object files), `wordle` (executable), `scores.json` (score data)
+This removes: `*.o` (object files), `cquest` (executable), `scores.json` (score data)
 
 ### Step 3: Compile
 ```bash
@@ -60,19 +60,19 @@ make
 gcc -O2 -Wall -std=c99 -c main.c
 gcc -O2 -Wall -std=c99 -c game.c
 gcc -O2 -Wall -std=c99 -c score.c
-gcc -O2 -Wall -std=c99 -o wordle main.o game.o score.o
+gcc -O2 -Wall -std=c99 -o cquest main.o game.o score.o
 ```
 
 ### Step 4: Verify Compilation
-```bash
-ls -lh wordle
+```powershell
+Get-Item .\cquest.exe
 ```
 
-You should see: `-rwxr-xr-x 1 ... wordle` (executable with x permission)
+You should see the `cquest.exe` file listed in the current folder.
 
 ### Step 5: Run Program
-```bash
-./wordle
+```powershell
+.\cquest.exe
 ```
 
 ## Makefile Targets
@@ -81,7 +81,7 @@ You should see: `-rwxr-xr-x 1 ... wordle` (executable with x permission)
 |---------|--------|
 | `make` atau `make all` | Compile project (default) |
 | `make clean` | Remove object files, executable, scores.json |
-| `make wordle` | Build executable only |
+| `make c_quest` | Build executable only |
 | `make main.o` | Build main.o only |
 | `make game.o` | Build game.o only |
 | `make score.o` | Build score.o only |
@@ -103,13 +103,13 @@ You should see: `-rwxr-xr-x 1 ... wordle` (executable with x permission)
 | `gcc: command not found` | Install GCC: `sudo apt-get install gcc` |
 | `make: command not found` | Install Make: `sudo apt-get install make` |
 | Error in `score.c` line X | Check for missing headers or corrupted file |
-| `permission denied` | Run: `chmod +x wordle` then try again |
+| `permission denied` | Ensure the executable exists (on Unix: `chmod +x cquest`) |
 
 ### Debug Mode
-```bash
+```powershell
 make clean
 make CFLAGS="-g -O0 -Wall"
-gdb ./wordle
+gdb ./cquest
 ```
 
 ## File Size After Build
@@ -118,21 +118,21 @@ gdb ./wordle
 -rw-r--r-- score.o          (3-4 KB)
 -rw-r--r-- game.o           (2-3 KB)
 -rw-r--r-- main.o           (2-3 KB)
--rwxr-xr-x wordle           (22 KB) ← Executable
+-rwxr-xr-x cquest           (22 KB) ← Executable
 ```
 
 ## Testing After Compilation
 
 ### Quick Test
-```bash
-echo -e "1\nTestUser\n5" | ./wordle
+```powershell
+"1`nTestUser`n5" | .\cquest.exe
 ```
 
 Expected output: Menu appears, login succeeds, program exits
 
 ### Full Test
-```bash
-./wordle
+```powershell
+.\cquest.exe
 # Manually:
 # 1. Press 1 → Enter name → Try different options
 # 2. Press 4 → Try playing a game
@@ -158,14 +158,13 @@ Expected output: Menu appears, login succeeds, program exits
 ```bash
 # Pastikan Anda di directory yang benar
 pwd
-# Seharusnya: /path/to/wordle_kp2025
+# Seharusnya: C:\path\to\cquest
 
 # Cek file ada
-ls wordle
+Get-Item .\cquest.exe
 
-# Cek permission
-ls -l wordle
-# Seharusnya ada 'x' di permission
+# Cek permission (Windows: not required)
+Get-Item .\cquest.exe
 ```
 
 ## Rebuild Instructions
@@ -186,33 +185,33 @@ touch *.c && make
 
 ## Version Control (if using Git)
 
-```bash
+```powershell
 # Optional: Setup .gitignore
 cat > .gitignore << EOF
 *.o
-wordle
+cquest
 scores.json
 EOF
 
 # Ignore compiled files
-git add -A :!wordle :!*.o :!scores.json
+git add -A :!cquest :!*.o :!scores.json
 ```
 
 ## Next Steps After Build
 
-1. ✅ Compile successful
-2. ✅ Run `./wordle`
-3. ✅ Test semua menu options
-4. ✅ Mainkan game untuk generate scores.json
-5. ✅ Lihat leaderboard & history
-6. ✅ Ready for submission
+1.   Compile successful
+2.   Run `.\cquest.exe`
+3.   Test semua menu options
+4.   Mainkan game untuk generate scores.json
+5.   Lihat leaderboard & history
+6.   Ready for submission
 
 ## Support
 
 Jika ada masalah:
 
 1. **Read**: Check README.md atau QUICKSTART.md
-2. **Debug**: Run `./wordle` secara manual dan test
+2. **Debug**: Run `.\cquest.exe` secara manual dan test
 3. **Clean**: Run `make clean && make` untuk fresh rebuild
 4. **Check**: Verify `gcc` dan `make` terinstall dengan benar
 
@@ -222,13 +221,7 @@ Sebelum submit, pastikan:
 
 - [ ] Program compile tanpa error (`make` berjalan sukses)
 - [ ] Warning yang muncul adalah minor (OK untuk submit)
-- [ ] Executable ada: `ls wordle` shows file
-- [ ] Program berjalan: `./wordle` launches menu
+- [ ] Executable ada: `Get-Item .\cquest.exe` shows file
+- [ ] Program berjalan: `.\cquest.exe` launches menu
 - [ ] All files present dalam folder
 - [ ] Documentation lengkap (README, QUICKSTART, etc)
-
----
-
-**Created**: December 9, 2025  
-**Last Updated**: December 9, 2025  
-**Status**: ✅ Ready to Use

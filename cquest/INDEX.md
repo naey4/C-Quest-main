@@ -1,22 +1,22 @@
-# 📁 WORDLE C - KP 2025 PROJECT FOLDER
+#   C-QUEST - KP 2025 PROJECT FOLDER
 
 ## Struktur Folder
 
 ```
-wordle_kp2025/
-├── 📄 Core Source Files
+c-quest-main/
+├──   Core Source Files
 │   ├── score.h           (Header file untuk score management)
 │   ├── score.c           (Implementasi JSON & leaderboard)
 │   ├── game.c            (Game logic & word evaluation)
 │   └── main.c            (Menu system & entry point)
 │
-├── 🔨 Build System
+├──   Build System
 │   └── Makefile          (Compilation configuration)
 │
-├── ⚙️ Executable
-│   └── wordle            (Compiled binary, ready to run)
+├──   Executable
+│   └── cquest           (Compiled binary, ready to run)
 │
-└── 📚 Documentation
+└──   Documentation
     ├── README.md                      (Comprehensive guide)
     ├── QUICKSTART.md                  (Quick start guide)
     ├── IMPLEMENTATION_SUMMARY.md      (Technical summary)
@@ -41,7 +41,7 @@ wordle_kp2025/
 | File | Size | Purpose |
 |------|------|---------|
 | Makefile | 345 B | GCC compilation flags: -O2 -Wall -std=c99 |
-| wordle | 22 KB | Ready-to-run executable binary |
+| cquest | 22 KB | Ready-to-run executable binary |
 
 ### Documentation Files
 
@@ -57,7 +57,7 @@ wordle_kp2025/
 
 ### 1. Navigate to Folder
 ```bash
-cd wordle_kp2025
+ cd cquest
 ```
 
 ### 2. Compile (Optional - executable sudah ada)
@@ -66,8 +66,8 @@ make
 ```
 
 ### 3. Run Program
-```bash
-./wordle
+```powershell
+.\cquest.exe
 ```
 
 ### 4. Clean (Remove old builds)
@@ -77,31 +77,14 @@ make clean
 
 ## Features Summary
 
-✅ Menu system dengan login
-✅ 3 difficulty levels (Easy/Medium/Hard)
-✅ Persistent score storage (JSON format)
-✅ Leaderboard & player history
-✅ Extended statistics per player per mode
-✅ Modular code structure
-✅ Makefile build system
-✅ Comprehensive documentation
-
-## How to Use This Folder
-
-### For Development
-1. Edit `.c` files sesuai kebutuhan
-2. Run `make clean && make` untuk rebuild
-3. Test dengan `./wordle`
-
-### For Submission
-1. Copy entire folder `wordle_kp2025/` ke tempat pengumpulan
-2. Atau compress: `zip -r wordle_kp2025.zip wordle_kp2025/`
-3. Include dokumentasi README.md jika diminta
-
-### For Reference
-- Lihat README.md untuk dokumentasi lengkap
-- Lihat QUICKSTART.md untuk quick reference
-- Lihat IMPLEMENTATION_SUMMARY.md untuk technical details
+  Menu system dengan login
+  3 difficulty levels (Easy/Medium/Hard)
+  Persistent score storage (JSON format)
+  Leaderboard & player history
+  Extended statistics per player per mode
+  Modular code structure
+  Makefile build system
+  Comprehensive documentation
 
 ## File Statistics
 
@@ -109,7 +92,7 @@ make clean
 Total files in folder:    9 items
 ├─ Source code:          4 files (.c/.h)
 ├─ Build system:         1 file (Makefile)
-├─ Executable:           1 file (wordle)
+├─ Executable:           1 file (cquest)
 └─ Documentation:        4 files (.md)
 
 Total code size:         16.4 KB (source)
@@ -130,7 +113,7 @@ Target dependencies:
   main.o → score.h
   game.o → score.h
   score.o → score.h
-  wordle → main.o game.o score.o
+  cquest → main.o game.o score.o
 ```
 
 ## Platform & Requirements
@@ -154,18 +137,12 @@ Target dependencies:
 ## Support Files
 
 Jika ada file tambahan yang ingin ditambahkan ke folder:
-- Letakkan di dalam `wordle_kp2025/`
+-- Letakkan di dalam `c-quest-main/`
 - Update file ini (INDEX.md) dengan deskripsi file baru
 
 ## Next Steps
 
 1. **Immediate**: Folder sudah siap untuk digunakan/dikumpulkan
-2. **Testing**: Jalankan `./wordle` untuk test program
+2. **Testing**: Jalankan `.\cquest.exe` untuk test program
 3. **Customization**: Modifikasi daftar kata di `game.c` jika diperlukan
 4. **Submission**: Copy folder ke tempat pengumpulan tugas
-
----
-
-**Created**: December 9, 2025  
-**Status**: ✅ COMPLETE & READY  
-**Version**: 1.0
