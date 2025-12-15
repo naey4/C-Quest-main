@@ -7,14 +7,12 @@
 
 #define SCORE_FILE "scores.json"
 
-/* helper: get today's date as YYYY-MM-DD */
 static void today_date(char *out, size_t n) {
     time_t t = time(NULL);
     struct tm tm = *localtime(&t);
     snprintf(out, n, "%04d-%02d-%02d", tm.tm_year+1900, tm.tm_mon+1, tm.tm_mday);
 }
 
-/* find entry pointer or NULL */
 static ScoreEntry* find_entry(ScoreList *sl, char mode, const char *name) {
     for (int i=0;i<sl->count;++i) {
         if (sl->entries[i].mode == mode && strcasecmp(sl->entries[i].name, name) == 0) return &sl->entries[i];
@@ -22,8 +20,6 @@ static ScoreEntry* find_entry(ScoreList *sl, char mode, const char *name) {
     return NULL;
 }
 
-/* --- JSON helpers (simple, tailored to our format) --- */
-/* parse int value from object substring for key (e.g. "games_played":123) */
 static int extract_json_int(const char *obj, const char *key, int *out) {
     char pattern[64];
     snprintf(pattern, sizeof(pattern), "\"%s\"", key);
@@ -38,7 +34,6 @@ static int extract_json_int(const char *obj, const char *key, int *out) {
     return 0;
 }
 
-/* parse string value from object substring for key (e.g. "name":"Alice") */
 static int extract_json_str(const char *obj, const char *key, char *out, size_t outsz) {
     char pattern[64];
     snprintf(pattern, sizeof(pattern), "\"%s\"", key);
@@ -59,7 +54,6 @@ static int extract_json_str(const char *obj, const char *key, char *out, size_t 
     return 1;
 }
 
-/* parse single object content between { ... } into ScoreEntry */
 static int parse_object_to_entry(const char *obj_start, const char *obj_end, ScoreEntry *e) {
     size_t len = obj_end - obj_start + 1;
     char *buf = (char*)malloc(len+1);
@@ -90,8 +84,7 @@ static int parse_object_to_entry(const char *obj_start, const char *obj_end, Sco
 void load_scores(ScoreList *sl) {
     sl->count = 0;
     FILE *f = fopen(SCORE_FILE, "r");
-    if (!f) return; /* not found -> empty */
-    /* read full file into memory */
+    if (!f) return; 
     fseek(f, 0, SEEK_END);
     long sz = ftell(f);
     fseek(f, 0, SEEK_SET);
@@ -101,7 +94,6 @@ void load_scores(ScoreList *sl) {
     buf[sz] = '\0';
     fclose(f);
 
-    /* find objects {} */
     char *p = buf;
     while ((p = strchr(p, '{')) != NULL) {
         char *q = strchr(p, '}');
@@ -145,7 +137,6 @@ void save_scores(const ScoreList *sl) {
     fclose(f);
 }
 
-/* record game: won (1) or lost (0). attempts_used is attempts taken (if lost, attempts_used == max attempts) */
 void record_game_result(ScoreList *sl, char mode, const char *name, int attempts_used, int won) {
     ScoreEntry *e = find_entry(sl, mode, name);
     if (!e) {
@@ -175,9 +166,7 @@ void record_game_result(ScoreList *sl, char mode, const char *name, int attempts
     save_scores(sl);
 }
 
-/* show top N (5) for mode */
 void show_top_scores(const ScoreList *sl, char mode) {
-    /* collect */
     ScoreEntry tmp[MAX_SCORES];
     int c = 0;
     for (int i=0;i<sl->count;++i) {
@@ -187,8 +176,6 @@ void show_top_scores(const ScoreList *sl, char mode) {
         printf("Belum ada skor untuk mode %c.\n", mode);
         return;
     }
-    /* sort by best_attempts (non-zero first, smaller better), then by wins desc */
-    /* Because using C99 blocks is non-portable, implement manual sort: */
     for (int i=0;i<c-1;++i) {
         for (int j=i+1;j<c;++j) {
             int ai = tmp[i].best_attempts==0 ? 1000000 : tmp[i].best_attempts;
@@ -211,7 +198,6 @@ void show_top_scores(const ScoreList *sl, char mode) {
     }
 }
 
-/* show all-time history for a player across modes */
 void show_player_history(const ScoreList *sl, const char *name) {
     int found = 0;
     for (int m=0;m<3;++m) {

@@ -156,7 +156,6 @@ static int evaluate_and_print(const char *guess, const char *secret) {
         }
     }
     /* print (simple, no ANSI for portability) */
-    /* print dengan warna ala Wordle (kotak) */
     for (int i = 0; i < PANJANG_KATA; ++i) {
         char c = toupper((unsigned char)guess[i]);
 
