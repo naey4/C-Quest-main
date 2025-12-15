@@ -2,6 +2,33 @@
   {
     "mode":"E",
     "name":"nesya",
+    "games_played":3,
+    "wins":3,
+    "best_attempts":1,
+    "total_attempts":5,
+    "last_win":"2025-12-15"
+  },
+  {
+    "mode":"M",
+    "name":"nesya",
+    "games_played":2,
+    "wins":2,
+    "best_attempts":1,
+    "total_attempts":4,
+    "last_win":"2025-12-15"
+  },
+  {
+    "mode":"H",
+    "name":"nesya",
+    "games_played":4,
+    "wins":3,
+    "best_attempts":1,
+    "total_attempts":8,
+    "last_win":"2025-12-15"
+  },
+  {
+    "mode":"E",
+    "name":"briell",
     "games_played":1,
     "wins":1,
     "best_attempts":1,
@@ -10,7 +37,34 @@
   },
   {
     "mode":"M",
-    "name":"nesya",
+    "name":"briell",
+    "games_played":4,
+    "wins":4,
+    "best_attempts":1,
+    "total_attempts":4,
+    "last_win":"2025-12-15"
+  },
+  {
+    "mode":"H",
+    "name":"briell",
+    "games_played":1,
+    "wins":1,
+    "best_attempts":1,
+    "total_attempts":1,
+    "last_win":"2025-12-15"
+  },
+  {
+    "mode":"E",
+    "name":"abel",
+    "games_played":4,
+    "wins":4,
+    "best_attempts":1,
+    "total_attempts":4,
+    "last_win":"2025-12-15"
+  },
+  {
+    "mode":"M",
+    "name":"abel",
     "games_played":1,
     "wins":1,
     "best_attempts":1,
@@ -19,11 +73,11 @@
   },
   {
     "mode":"H",
-    "name":"nesya",
+    "name":"abel",
     "games_played":1,
     "wins":1,
-    "best_attempts":2,
-    "total_attempts":2,
+    "best_attempts":1,
+    "total_attempts":1,
     "last_win":"2025-12-15"
   }
 ]
