@@ -7,7 +7,6 @@
 
 #include "score.h"
 
-/* prototypes from game.c (we don't have game.h to keep minimal) */
 int play_game_session(char mode_char, const char *player_name, ScoreList *sl);
 
 #define MAKS_PLAYERNAME 32
@@ -18,13 +17,11 @@ static void clear_stdin_line(void) {
 }
 
 int main(void) {
-    /* Seed RNG with better entropy: mix time, clock, and PID */
     unsigned seed = (unsigned)time(NULL);
     seed = (seed << 16) | ((unsigned)clock() & 0xFFFF);
-    seed ^= (unsigned)getpid();  /* Add process ID for extra entropy */
+    seed ^= (unsigned)getpid();  
     srand(seed);
     
-    /* Warm up the RNG by discarding first few values (skip weak initial sequence) */
     for (int i = 0; i < 10; i++) rand();
 
     ScoreList sl;

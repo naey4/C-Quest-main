@@ -7,7 +7,7 @@
 #include "game.h"
 #include "score.h"
 
-// === KODE WARNA ANSI (UNTUK OUTPUT KOTAK WORDLE) ===
+// === KODE WARNA ANSI (UNTUK OUTPUT KOTAK) ===
 #define WARNA_RESET  "\x1b[0m"
 #define WARNA_HIJAU  "\x1b[42m\x1b[30m"  // hijau
 #define WARNA_KUNING "\x1b[43m\x1b[30m"  // kuning
@@ -23,7 +23,6 @@ static const char *kata_bawaan[] = {
 };
 static const int jumlah_bawaan = sizeof(kata_bawaan)/sizeof(kata_bawaan[0]);
 
-/* Fisher-Yates scramble, ensure not equal to source (try up to 100 times) */
 static void acak_kata(const char *sumber, char *tujuan) {
     char tmp[PANJANG_KATA+1];
     int percobaan = 0;
@@ -39,7 +38,6 @@ static void acak_kata(const char *sumber, char *tujuan) {
     } while (strcmp(tujuan, sumber) == 0 && percobaan < 100);
 }
 
-/* evaluate guess and print colored feedback; returns 1 if guess==secret */
 static int evaluate_and_print(const char *guess, const char *secret) {
     int penanda[PANJANG_KATA] = {0};
     int terpakai[PANJANG_KATA] = {0};
@@ -82,10 +80,8 @@ static int evaluate_and_print(const char *guess, const char *secret) {
     return strncmp(guess, secret, PANJANG_KATA) == 0;
 }
 
-/* play one game, returns attempts used and won flag (1=won,0=lost) */
 int play_game_session(char mode_char, const char *player_name, ScoreList *sl) {
     int max_attempts = (mode_char=='E') ? 15 : (mode_char=='M') ? 10 : 5;
-    /* pick secret and hint using rejection sampling to avoid modulo bias */
     int idx;
     do {
         idx = rand();
@@ -112,23 +108,20 @@ int play_game_session(char mode_char, const char *player_name, ScoreList *sl) {
         while (L>0 && (buf[L-1]=='\n' || buf[L-1]=='\r')) { buf[L-1]='\0'; L--; }
         if (L != PANJANG_KATA) {
             printf("Tebakan harus tepat %d huruf.\n", PANJANG_KATA);
-            attempt--; /* don't consume attempt */
+            attempt--; 
             continue;
         }
-        /* normalize to lowercase */
         for (int i=0;i<PANJANG_KATA;++i) buf[i] = tolower((unsigned char)buf[i]);
 
-        /* NOTE: sesuai permintaan, kita TIDAK memaksa tebakan harus ada di kata_bawaan. */
 
         int won = evaluate_and_print(buf, secret);
         if (won) {
             printf("Selamat! Tebakan benar dalam %d percobaan.\n", attempt);
-            /* record */
+
             record_game_result(sl, mode_char, player_name, attempt, 1);
-            return 1; /* won */
+            return 1; 
         }
     }
-    /* lost */
     printf("Maaf, Anda kalah. Kata yang benar: %s\n", secret);
     record_game_result(sl, mode_char, player_name, max_attempts, 0);
     return 0;
